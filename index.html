@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صدقة جارية - المرحوم بإذن الله محمد ماهر</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+        .quran-font { font-family: 'Amiri', serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-emerald-50 min-h-screen flex flex-col items-center p-4">
+
+    <!-- Header -->
+    <header class="w-full max-w-2xl bg-emerald-950/40 border border-emerald-800/50 backdrop-blur-md rounded-2xl p-4 mb-6 shadow-xl flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="bg-emerald-800/50 p-2.5 rounded-xl border border-emerald-700/50 text-emerald-200">
+                🕌
+            </div>
+            <div>
+                <h1 class="text-lg font-bold text-emerald-100">صدقة جارية</h1>
+                <p class="text-xs text-emerald-400">عن المغفور له بإذن الله: محمد ماهر</p>
+            </div>
+        </div>
+        <button onclick="navigator.share ? navigator.share({title: 'صدقة جارية', url: window.location.href}) : alert('تم نسخ الرابط')" class="bg-emerald-900/60 hover:bg-emerald-800 p-2.5 rounded-xl border border-emerald-700/50 text-emerald-200 transition">
+            🔗 مشاركة
+        </button>
+    </header>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-2xl space-y-6">
+
+        <!-- Dedicated Dua Card -->
+        <div class="bg-gradient-to-br from-emerald-900/50 to-slate-900 border border-emerald-700/40 rounded-3xl p-6 text-center shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 text-emerald-800/20 text-9xl font-serif select-none">🤲</div>
+            <span class="text-xs tracking-widest text-emerald-400 uppercase font-semibold bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-800">دعاء للمتوفى</span>
+            <h2 class="quran-font text-2xl md:text-3xl font-bold leading-loose text-emerald-100 my-4">
+                "اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ، وَعَافِهِ وَاعْفُ عَنْهُ، وَأَكْرِمْ نُزُلَهُ، وَوَسِّعْ مُدْخَلَهُ، وَاغْسِلْهُ بالمَاءِ والثَّلْجِ والبَرَدِ، ونَقِّهِ مِنَ الخَطَايَا كما نَقَّيْتَ الثَّوْبَ الأَبْيَضَ مِنَ الدَّنَسِ"
+            </h2>
+            <div class="text-xs text-emerald-300/80 bg-emerald-950/50 py-2 px-4 rounded-xl inline-block border border-emerald-800/40">
+                📅 صدقة جارية متجددة بإذن الله
+            </div>
+        </div>
+
+        <!-- Section: Quran Audio Player -->
+        <div class="bg-slate-900/80 border border-emerald-800/40 rounded-2xl p-5 shadow-lg">
+            <h3 class="text-emerald-400 font-bold mb-3 flex items-center gap-2">
+                <span>📖</span> مشغل القرآن الكريم (سورة البقرة)
+            </h3>
+            <div class="bg-emerald-950/40 p-4 rounded-xl border border-emerald-800/40">
+                <p class="text-sm font-semibold text-emerald-200 mb-2">تلاوة هادئة لراحة القلب</p>
+                <audio controls class="w-full h-10 accent-emerald-600">
+                    <source src="https://server11.mp3quran.net/sds/002.mp3" type="audio/mpeg">
+                    متصفحك لا يدعم مشغل الصوت
+                </audio>
+            </div>
+        </div>
+
+        <!-- Electronic Tasbeeh -->
+        <div class="bg-slate-900/80 border border-emerald-800/40 rounded-2xl p-6 text-center shadow-lg">
+            <h3 class="text-emerald-400 font-bold mb-3">المسبحة الإلكترونية</h3>
+            <div id="counter" class="text-5xl font-bold text-emerald-100 my-4">0</div>
+            <div class="flex justify-center gap-3">
+                <button onclick="incrementCounter()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-3 rounded-xl transition shadow-lg active:scale-95">
+                    سبحان الله
+                </button>
+                <button onclick="resetCounter()" class="bg-slate-800 hover:bg-slate-700 text-emerald-300 px-4 py-3 rounded-xl transition border border-emerald-800">
+                    إعادة
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-8 text-center text-xs text-emerald-500/60 pb-4">
+        تم إنشاء هذا الموقع كصدقة جارية لروح المرحوم محمد ماهر • لا تنسوه من صالح دعائكم
+    </footer>
+
+    <script>
+        let count = 0;
+        function incrementCounter() {
+            count++;
+            document.getElementById('counter').innerText = count;
+        }
+        function resetCounter() {
+            count = 0;
+            document.getElementById('counter').innerText = count;
+        }
+    </script>
+</body>
+</html>
